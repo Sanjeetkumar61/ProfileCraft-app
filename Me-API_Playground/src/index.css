@@ -1,0 +1,30 @@
+ @import "tailwindcss";
+
+ /* ===== FLOATING ANIMATION CODE START ===== */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-3000 {
+    animation-delay: 3s;
+}
+
+.animation-delay-5000 {
+    animation-delay: 5s;
+}
+
+.animate-float-slow {
+  animation: float 12s ease-in-out infinite;
+}
+
+/* ===== FLOATING ANIMATION CODE END ===== */
