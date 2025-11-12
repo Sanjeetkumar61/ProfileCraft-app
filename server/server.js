@@ -44,12 +44,7 @@ app.use('/api/certificates', certificateRoutes); // <-- NAYI LINE
 app.use(notFound);
 app.use(errorHandler);
 
-app.get('/', (req, res) => {
-  res.send({
-    activeStatus: true,
-    error: false,
-  })
-})
+
 
 // Connect to DB first, then start server
 connectDB()
