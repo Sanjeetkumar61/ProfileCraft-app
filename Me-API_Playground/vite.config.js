@@ -6,17 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),
   tailwindcss()
-<<<<<<< HEAD
   ],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://profilecraft-backend.onrender.com',
-        changeOrigin: true,
-      },
-    },
-  },
-=======
-  ]
->>>>>>> 7a4a203 (fix CORS and update server configuration)
 })
