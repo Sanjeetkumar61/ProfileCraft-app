@@ -1,45 +1,51 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = axios.create({ baseURL: '/api' });
 
-// Axios Interceptor to automatically send the token with requests
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+
+const API = axios.create({
+  baseURL: `${API_BASE_URL}/api`,
+  withCredentials: true,
+});
+
+// Attach token automatically
 API.interceptors.request.use((req) => {
-  const token = localStorage.getItem('meapi_token') || sessionStorage.getItem('meapi_token');
+  const token =
+    localStorage.getItem("meapi_token") ||
+    sessionStorage.getItem("meapi_token");
+
   if (token) {
     req.headers.Authorization = `Bearer ${token}`;
   }
+
   return req;
 });
 
 // =================== AUTH ROUTES ===================
 export const registerUser = async (userData) => {
-  const { data } = await API.post('/users/register', userData);
+  const { data } = await API.post("/users/register", userData);
   return data;
 };
 
 export const loginUser = async (userData) => {
-  const { data } = await API.post('/users/login', userData);
+  const { data } = await API.post("/users/login", userData);
   return data;
 };
-
 
 // =================== USER PROFILE ROUTE ===================
-// NOTE: getProfile no longer exists, profile data comes from login/storage
 export const updateProfile = async (profileData) => {
-  // YEH URL AB THEEK KAR DIYA GAYA HAI
-  const { data } = await API.put('/users/profile', profileData);
+  const { data } = await API.put("/users/profile", profileData);
   return data;
 };
-
 
 // =================== SKILLS ROUTES ===================
 export const getSkills = async () => {
-  const { data } = await API.get('/skills');
+  const { data } = await API.get("/skills");
   return data;
 };
 
 export const createSkill = async (skillData) => {
-  const { data } = await API.post('/skills', skillData);
+  const { data } = await API.post("/skills", skillData);
   return data;
 };
 
@@ -53,10 +59,11 @@ export const deleteSkill = async (id) => {
   return data;
 };
 
-
 // =================== PROJECTS ROUTES ===================
-export const getProjects = async (skill = '') => {
-  const { data } = await API.get('/projects', { params: { skill: skill || undefined } });
+export const getProjects = async (skill = "") => {
+  const { data } = await API.get("/projects", {
+    params: { skill: skill || undefined },
+  });
   return data;
 };
 
@@ -66,7 +73,7 @@ export const getProjectById = async (id) => {
 };
 
 export const createProject = async (projectData) => {
-  const { data } = await API.post('/projects', projectData);
+  const { data } = await API.post("/projects", projectData);
   return data;
 };
 
@@ -80,15 +87,14 @@ export const deleteProject = async (id) => {
   return data;
 };
 
-
 // =================== CERTIFICATES ROUTES ===================
 export const getCertificates = async () => {
-  const { data } = await API.get('/certificates');
+  const { data } = await API.get("/certificates");
   return data;
 };
 
 export const createCertificate = async (certData) => {
-  const { data } = await API.post('/certificates', certData);
+  const { data } = await API.post("/certificates", certData);
   return data;
 };
 
@@ -102,9 +108,10 @@ export const deleteCertificate = async (id) => {
   return data;
 };
 
-
 // =================== SEARCH ROUTE ===================
 export const search = async (query) => {
-  const { data } = await API.get('/search', { params: { q: query } });
+  const { data } = await API.get("/search", {
+    params: { q: query },
+  });
   return data;
 };

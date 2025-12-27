@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),
   tailwindcss()
+<<<<<<< HEAD
   ],
   server: {
     proxy: {
@@ -15,4 +16,7 @@ export default defineConfig({
       },
     },
   },
+=======
+  ]
+>>>>>>> 7a4a203 (fix CORS and update server configuration)
 })
