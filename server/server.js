@@ -21,7 +21,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// API routes
+
 // const profileRoutes = require('./routes/profile');
 const projectsRoutes = require('./routes/projects');
 const skillsRoutes = require('./routes/skills');
