@@ -80,7 +80,6 @@
 //     process.exit(1);
 //   });
 
-
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -91,63 +90,40 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-/* =====================
-   CORS (FIXED VERSION)
-===================== */
+/* ✅ SIMPLE + SAFE CORS */
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "https://profilecraft-app.vercel.app",
-    ],
+    origin: true,
     credentials: true,
   })
 );
 
-/* =====================
-   BODY PARSER
-===================== */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* =====================
-   ROUTES
-===================== */
-const projectsRoutes = require("./routes/projects");
-const skillsRoutes = require("./routes/skills");
-const searchRoutes = require("./routes/search");
-const userRoutes = require("./routes/userRoutes");
-const certificateRoutes = require("./routes/certificates");
+// Routes
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/projects", require("./routes/projects"));
+app.use("/api/skills", require("./routes/skills"));
+app.use("/api/search", require("./routes/search"));
+app.use("/api/certificates", require("./routes/certificates"));
 
 app.get("/", (req, res) => {
   res.send("API running 🚀");
 });
 
-app.use("/api/projects", projectsRoutes);
-app.use("/api/skills", skillsRoutes);
-app.use("/api/search", searchRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/certificates", certificateRoutes);
-
-/* =====================
-   ERROR HANDLING
-===================== */
 const { errorHandler, notFound } = require("./middleware/errorHandler");
-
 app.use(notFound);
 app.use(errorHandler);
 
-/* =====================
-   START SERVER
-===================== */
+// Start server
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT}`);
+      console.log(`✅ Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
-    console.error("DB connection failed:", err);
+    console.error("❌ DB connection failed:", err);
     process.exit(1);
   });
