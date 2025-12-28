@@ -44,8 +44,3 @@ ProfileCraft is a full-stack web application that helps users create, manage, an
 ### Deployment
 - Frontend deployed on **Vercel**
 - Backend deployed on **Render**
-
----
-
-## 📁 Project Structure
-
