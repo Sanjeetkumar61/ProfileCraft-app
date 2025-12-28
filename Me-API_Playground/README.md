@@ -1,54 +1,49 @@
- ProfileCraft
-ProfileCraft is a full-stack web application that allows users to create, manage, and showcase their professional profiles, skills, and projects. It is designed with a clean UI, secure authentication, and a scalable backend architecture.
+ # ProfileCraft
 
-🚀 Live Demo
-Frontend: https://profilecraft-app.vercel.app
+ProfileCraft is a full-stack web application that helps users create, manage, and showcase their professional profile, skills, and projects. It is built using the MERN stack with a clean architecture and secure authentication system.
 
-Backend API: https://profilecraft-app.onrender.com
+---
 
-✨ Features
-User authentication (Register / Login)
+## 🚀 Live Links
 
-Secure JWT-based authentication
+- **Frontend:** https://profilecraft-app.vercel.app  
+- **Backend API:** https://profilecraft-app.onrender.com  
 
-Profile management system
+---
 
-Add and manage skills & projects
+## ✨ Features
 
-Search functionality
+- User registration and login
+- JWT-based authentication
+- Secure protected routes
+- Profile management
+- Skills and projects management
+- Search functionality
+- RESTful API structure
+- Responsive UI
+- Backend–frontend integration with CORS handling
 
-RESTful API architecture
+---
 
-Responsive and modern UI
+## 🛠️ Tech Stack
 
-Clean backend structure with middleware
+### Frontend
+- React (Vite)
+- Tailwind CSS
+- Axios
+- React Router DOM
 
-CORS-enabled cross-platform communication
+### Backend
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- JSON Web Token (JWT)
+- CORS
+- dotenv
 
-🛠️ Tech Stack
-Frontend
-React (Vite)
+### Deployment
+- Frontend deployed on **Vercel**
+- Backend deployed on **Render**
 
-Tailwind CSS
 
-Axios
 
-React Router
-
-Backend
-Node.js
-
-Express.js
-
-MongoDB & Mongoose
-
-JWT Authentication
-
-CORS
-
-dotenv
-
-Deployment
-Frontend: Vercel
-
-Backend: Render
