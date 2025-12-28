@@ -1,32 +1,54 @@
-# React + Vite
+ ProfileCraft
+ProfileCraft is a full-stack web application that allows users to create, manage, and showcase their professional profiles, skills, and projects. It is designed with a clean UI, secure authentication, and a scalable backend architecture.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Live Demo
+Frontend: https://profilecraft-app.vercel.app
 
-Currently, two official plugins are available:
+Backend API: https://profilecraft-app.onrender.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Features
+User authentication (Register / Login)
 
-## React Compiler
+Secure JWT-based authentication
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Profile management system
 
-## Expanding the ESLint configuration
+Add and manage skills & projects
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Search functionality
 
-## Backend (Express + MongoDB)
+RESTful API architecture
 
-There is a `backend/` folder containing an Express + Mongoose API scaffold that pairs with this frontend.
+Responsive and modern UI
 
-Quick start:
+Clean backend structure with middleware
 
-```powershell
-cd backend
-copy .env.example .env
-# edit .env to set MONGO_URI
-npm install
-npm run dev
-```
+CORS-enabled cross-platform communication
 
-Set the frontend API base URL in `src/services/api.js` to point to `http://localhost:5000/api` when running locally.
+🛠️ Tech Stack
+Frontend
+React (Vite)
+
+Tailwind CSS
+
+Axios
+
+React Router
+
+Backend
+Node.js
+
+Express.js
+
+MongoDB & Mongoose
+
+JWT Authentication
+
+CORS
+
+dotenv
+
+Deployment
+Frontend: Vercel
+
+Backend: Render
